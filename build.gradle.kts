@@ -6,7 +6,7 @@ plugins {
     `maven-publish`
 }
 
-group = "deb.sublab"
+group = "dev.sublab"
 version = "1.0.0"
 
 repositories {
