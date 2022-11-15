@@ -1,17 +1,12 @@
 package dev.sublab.hashing
 
-interface ByteArrayConvertible {
-    fun toByteArray(): ByteArray
-}
+import dev.sublab.hashing.utils.ByteArrayConvertible
+import dev.sublab.hashing.utils.asByteArrayConvertible
 
 class Hashing(internal val value: ByteArrayConvertible)
 
 val ByteArray.hashing: Hashing
-    get() = Hashing(object : ByteArrayConvertible {
-        override fun toByteArray() = this@hashing
-    })
+    get() = Hashing(asByteArrayConvertible())
 
 val String.hashing: Hashing
-    get() = Hashing(object : ByteArrayConvertible {
-        override fun toByteArray() = this@hashing.toByteArray()
-    })
+    get() = Hashing(asByteArrayConvertible())
