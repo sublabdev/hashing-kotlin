@@ -1,12 +1,14 @@
 package dev.sublab.hashing
 
+import dev.sublab.hashing.hashers.blake2b_256
 import dev.sublab.hashing.support.TestCase
+import dev.sublab.hex.hex
 import kotlin.test.Test
 import kotlin.test.assertContentEquals
 
 class TestBlake2b {
     private val blake2b256Cases = listOf(
-        TestCase("DQHyqj4mJRegcgFFBmFmXAdCwFhAPLiVFiARBbAoU4EDhMM", "0xbcf136a9e09e0a858111de57745c2d143647677aa6d8d28606db3247a164da48".decodeHex()),
+        TestCase("DQHyqj4mJRegcgFFBmFmXAdCwFhAPLiVFiARBbAoU4EDhMM", "0xbcf136a9e09e0a858111de57745c2d143647677aa6d8d28606db3247a164da48".hex.decode()),
     )
 
     @Test

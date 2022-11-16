@@ -1,6 +1,6 @@
-package dev.sublab.hashing
+package dev.sublab.hex
 
-import dev.sublab.hashing.support.Constants
+import dev.sublab.support.Constants
 import java.util.UUID
 import kotlin.test.Test
 import kotlin.test.assertContentEquals
@@ -13,8 +13,8 @@ class TestHex {
         for (value in testValues) {
             val valueByteArray = value.toByteArray()
 
-            val encoded = valueByteArray.toHex()
-            val decoded = encoded.decodeHex()
+            val encoded = valueByteArray.hex.encode()
+            val decoded = encoded.hex.decode()
 
             assertContentEquals(valueByteArray, decoded)
         }

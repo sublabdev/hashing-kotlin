@@ -1,4 +1,4 @@
-package dev.sublab.hashing.utils
+package dev.sublab.utils
 
 interface ByteArrayConvertible {
     fun toByteArray(): ByteArray

@@ -1,6 +1,7 @@
-package dev.sublab.hashing
+package dev.sublab.hashing.hashers
 
 import com.appmattus.crypto.Algorithm
+import dev.sublab.hashing.Hashing
 
 private fun ByteArray.xx(width: Long) = (0 until width/64)
     .map {
