@@ -17,6 +17,8 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
     implementation("com.appmattus.crypto:cryptohash:0.10.1")
+    implementation("net.i2p.crypto:eddsa:0.3.0")
+    implementation("org.web3j:crypto:4.9.5")
 }
 
 tasks.test {
