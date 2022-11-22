@@ -1,7 +1,7 @@
 package dev.sublab.hashing
 
-import dev.sublab.utils.ByteArrayConvertible
-import dev.sublab.utils.asByteArrayConvertible
+import dev.sublab.common.ByteArrayConvertible
+import dev.sublab.common.asByteArrayConvertible
 
 class Hashing(internal val value: ByteArrayConvertible)
 
