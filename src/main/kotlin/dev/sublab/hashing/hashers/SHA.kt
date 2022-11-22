@@ -5,15 +5,15 @@ import dev.sublab.hashing.Hashing
 import dev.sublab.hashing.InvalidHashOutputSizesException
 
 private fun ByteArray.sha(outputSize: IntArray) =
-    when (outputSize) {
-        intArrayOf(0) -> Algorithm.SHA_0
-        intArrayOf(1) -> Algorithm.SHA_1
-        intArrayOf(224) -> Algorithm.SHA_224
-        intArrayOf(256) -> Algorithm.SHA_256
-        intArrayOf(384) -> Algorithm.SHA_384
-        intArrayOf(512) -> Algorithm.SHA_512
-        intArrayOf(512, 224) -> Algorithm.SHA_512_224
-        intArrayOf(512, 256) -> Algorithm.SHA_512_256
+    when  {
+        outputSize contentEquals intArrayOf(0) -> Algorithm.SHA_0
+        outputSize contentEquals intArrayOf(1) -> Algorithm.SHA_1
+        outputSize contentEquals intArrayOf(224) -> Algorithm.SHA_224
+        outputSize contentEquals intArrayOf(256) -> Algorithm.SHA_256
+        outputSize contentEquals intArrayOf(384) -> Algorithm.SHA_384
+        outputSize contentEquals intArrayOf(512) -> Algorithm.SHA_512
+        outputSize contentEquals intArrayOf(512, 224) -> Algorithm.SHA_512_224
+        outputSize contentEquals intArrayOf(512, 256) -> Algorithm.SHA_512_256
         else -> throw InvalidHashOutputSizesException(outputSize)
     }
     .createDigest()
