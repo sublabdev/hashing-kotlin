@@ -32,7 +32,7 @@ class StringSS58(private val string: String) {
     fun networkType() = decode().let { decoded ->
         val first = decoded[0].toInt()
 
-        when (networkTypeLength(string.base58.decode())) {
+        when (networkTypeLength(decoded)) {
             1 -> first
             2 -> {
                 val second = decoded[1].toInt()

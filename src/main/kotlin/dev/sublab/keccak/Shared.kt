@@ -1,4 +1,4 @@
-package com.appmattus.crypto.internal.core
+package dev.sublab.keccak
 
 /**
  * Encode a 64-bit integer with little-endian convention.

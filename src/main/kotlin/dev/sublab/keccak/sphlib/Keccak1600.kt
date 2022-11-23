@@ -53,7 +53,7 @@
  * limitations under the License.
  */
 
-package com.appmattus.crypto.internal.core.sphlib
+package dev.sublab.keccak.sphlib
 
 import kotlin.math.min
 

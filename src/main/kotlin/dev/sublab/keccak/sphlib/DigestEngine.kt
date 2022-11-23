@@ -37,7 +37,7 @@
  * limitations under the License.
  */
 
-package com.appmattus.crypto.internal.core.sphlib
+package dev.sublab.keccak.sphlib
 
 import com.appmattus.crypto.Digest
 

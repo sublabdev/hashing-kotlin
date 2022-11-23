@@ -1,10 +1,10 @@
 package dev.sublab.hashing.hashers
 
 import com.appmattus.crypto.Algorithm
-import com.appmattus.crypto.internal.core.sphlib.Keccak1600
-import com.appmattus.crypto.internal.core.sphlib.prepareForKeccakF1600
 import dev.sublab.hashing.Hashing
 import dev.sublab.hashing.InvalidHashOutputSizeException
+import dev.sublab.keccak.sphlib.Keccak1600
+import dev.sublab.keccak.sphlib.prepareForKeccakF1600
 
 private fun ByteArray.keccak(outputSize: Int) =
     when (outputSize) {

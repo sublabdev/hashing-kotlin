@@ -53,11 +53,10 @@
  * limitations under the License.
  */
 
-package com.appmattus.crypto.internal.core.sphlib
+package dev.sublab.keccak.sphlib
 
-import com.appmattus.crypto.internal.core.decodeLELong
-import com.appmattus.crypto.internal.core.encodeLELong
-import dev.sublab.hex.hex
+import dev.sublab.keccak.decodeLELong
+import dev.sublab.keccak.encodeLELong
 
 internal abstract class KeccakCore<D : KeccakCore<D>>(private val markByte: Byte = 0x01) : DigestEngine<D>() {
     private lateinit var a: LongArray
