@@ -17,6 +17,7 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
     implementation("dev.sublab:common-kotlin:1.0.0")
+    implementation("dev.sublab:keccak-kotlin:1.0.0")
     implementation("com.appmattus.crypto:cryptohash:0.10.1")
 }
 

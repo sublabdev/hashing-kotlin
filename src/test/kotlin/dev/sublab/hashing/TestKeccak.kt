@@ -1,11 +1,10 @@
 package dev.sublab.hashing
 
-import dev.sublab.hashing.hashers.*
+import dev.sublab.hashing.hashers.keccak1600
 import dev.sublab.hashing.support.TestCase
 import dev.sublab.hex.hex
 import kotlin.test.Test
 import kotlin.test.assertContentEquals
-import kotlin.test.assertEquals
 
 class TestKeccak {
 
@@ -31,7 +30,7 @@ class TestKeccak {
     @Test
     internal fun testF1600() {
         for (case in testCases) {
-            val result = case.value.toByteArray().hashing.keccak1600()
+            val result = case.value.hashing.keccak1600()
             assertContentEquals(case.expectedHash, result)
         }
     }
