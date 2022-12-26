@@ -15,11 +15,11 @@ class TestSS58 {
     @Test
     internal fun testAddressesDecoding() {
         for (case in testCases) {
-            val publicKey = case.value.ss58.publicKey()
-            assertContentEquals(case.expectedHash, publicKey)
+            val accountId = case.value.ss58.accountId()
+            assertContentEquals(case.expectedHash, accountId)
 
             val networkType = case.value.ss58.networkType()
-            val address = publicKey.ss58.address(networkType)
+            val address = accountId.ss58.address(networkType)
             assertEquals(case.value, address)
         }
     }

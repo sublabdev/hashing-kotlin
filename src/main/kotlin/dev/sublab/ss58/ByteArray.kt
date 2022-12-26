@@ -6,10 +6,12 @@ import dev.sublab.hashing.hashers.blake2b_512
 import dev.sublab.hashing.hashing
 
 class ByteArraySS58(private val byteArray: ByteArray) {
+    fun accountId() = if (byteArray.size > publicKeySize) {
+        byteArray.hashing.blake2b_256()
+    } else byteArray
+
     fun address(type: Int): String {
-        val publicKey = if (byteArray.size > publicKeySize) {
-            byteArray.hashing.blake2b_256()
-        } else byteArray
+        val accountId = byteArray.ss58.accountId()
 
         val single = type and 0x3fff
         val networkType = when (type) {
@@ -23,11 +25,11 @@ class ByteArraySS58(private val byteArray: ByteArray) {
             else -> throw InvalidAddressException()
         }
 
-        val checksum = (prefix.toByteArray() + networkType + publicKey)
+        val checksum = (prefix.toByteArray() + networkType + accountId)
             .hashing.blake2b_512()
             .copyOf(prefixSize)
 
-        return (networkType + publicKey + checksum).base58.encode()
+        return (networkType + accountId + checksum).base58.encode()
     }
 }
 
