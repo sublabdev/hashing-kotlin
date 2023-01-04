@@ -15,7 +15,7 @@ class StringSS58(private val string: String) {
         else -> throw InvalidAddressException()
     }
 
-    fun accountId() = decode().let { decoded ->
+    fun accountId(): AccountId = decode().let { decoded ->
         val networkTypeLength = networkTypeLength(decoded)
         val publicKey = decoded.copyOfRange(networkTypeLength, networkTypeLength + publicKeySize)
 

@@ -6,7 +6,7 @@ import dev.sublab.hashing.hashers.blake2b_512
 import dev.sublab.hashing.hashing
 
 class ByteArraySS58(private val byteArray: ByteArray) {
-    fun accountId() = if (byteArray.size > publicKeySize) {
+    fun accountId(): AccountId = if (byteArray.size > publicKeySize) {
         byteArray.hashing.blake2b_256()
     } else byteArray
 
