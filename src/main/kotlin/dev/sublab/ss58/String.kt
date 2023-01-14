@@ -4,7 +4,13 @@ import dev.sublab.base58.base58
 import dev.sublab.hashing.hashers.blake2b_512
 import dev.sublab.hashing.hashing
 
+/**
+ * SS58 handler for String
+ */
 class StringSS58(private val string: String) {
+    /**
+     * Decoding the provided String value using Base58
+     */
     private fun decode() = string.base58.decode().apply {
         if (size < 2) throw InvalidAddressException()
     }
@@ -15,6 +21,9 @@ class StringSS58(private val string: String) {
         else -> throw InvalidAddressException()
     }
 
+    /**
+     * Returns public key from provided String value
+     */
     fun accountId(): AccountId = decode().let { decoded ->
         val networkTypeLength = networkTypeLength(decoded)
         val publicKey = decoded.copyOfRange(networkTypeLength, networkTypeLength + publicKeySize)
@@ -29,6 +38,9 @@ class StringSS58(private val string: String) {
         publicKey
     }
 
+    /**
+     * The network type from provided String value
+     */
     fun networkType() = decode().let { decoded ->
         val first = decoded[0].toInt()
 
