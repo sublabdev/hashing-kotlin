@@ -76,5 +76,8 @@ class StringSS58(private val string: String) {
     }
 }
 
+/**
+ * And access point for SS58 functionality for [String]
+ */
 val String.ss58
     get() = StringSS58(this)

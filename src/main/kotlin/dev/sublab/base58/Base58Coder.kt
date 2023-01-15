@@ -33,10 +33,10 @@ internal object Base58Coder {
     }
 
     /**
-     * Encodes the given bytes as a base58 string (no checksum is appended).
+     * Encodes the given bytes as a [Base58] string (no checksum is appended).
      *
      * @param byteArray the bytes to encode
-     * @return the base58-encoded string
+     * @return the base58-encoded [String]
      */
     fun encode(byteArray: ByteArray): String {
         var input = byteArray

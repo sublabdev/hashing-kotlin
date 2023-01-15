@@ -28,8 +28,9 @@ import dev.sublab.hashing.hashing
  */
 class ByteArraySS58(private val byteArray: ByteArray) {
     /**
-     * Returns `AccountId` hashed using blake2b for 256 bits if the provided byteArray is
-     * bigger then `SS58`'s public key's size. Otherwise return a plain `AccountId`.
+     * Returns [AccountId] hashed using [Blake2b] for 256 bits if the provided [ByteArray] is
+     * bigger then [SS58]'s public key's size. Otherwise return a plain [AccountId].
+     * @return An [AccountId] hashed using [Blake2b]
      */
     fun accountId(): AccountId = if (byteArray.size > publicKeySize) {
         byteArray.hashing.blake2b_256()
@@ -37,6 +38,8 @@ class ByteArraySS58(private val byteArray: ByteArray) {
 
     /**
      * Address for a specific network type
+     * @param type network type to get address for
+     * @return An adress for a specific network type
      */
     fun address(type: Int): String {
         val accountId = byteArray.ss58.accountId()

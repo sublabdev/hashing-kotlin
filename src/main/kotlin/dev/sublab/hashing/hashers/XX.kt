@@ -32,16 +32,16 @@ private fun ByteArray.xx(width: Long) = (0 until width/64)
     .fold(byteArrayOf()) { result, hash -> result + hash }
 
 /**
- * Hashing via XX with output size of 64
+ * Hashing via [XX] with output size of 64
  */
 fun Hashing.xx64() = value.toByteArray().xx(64)
 
 /**
- * Hashing via XX with output size of 128
+ * Hashing via [XX] with output size of 128
  */
 fun Hashing.xx128() = value.toByteArray().xx(128)
 
 /**
- * Hashing via XX with output size of 256
+ * Hashing via [XX] with output size of 256
  */
 fun Hashing.xx256() = value.toByteArray().xx(256)
