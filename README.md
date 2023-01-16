@@ -59,7 +59,7 @@ implementation 'dev.sublab:hashing-kotlin:1.0.0'
 ## Documentation
 
 - Our GitBook: [https://docs.sublab.dev/kotlin-libraries/hashing-kotlin/](https://docs.sublab.dev/kotlin-libraries/hashing-kotlin/)
-- API reference: [https://api-reference.sublab.dev/hashing-library/](https://api-reference.sublab.dev/hashing-library/)
+- API reference: [https://api-reference.sublab.dev/hashing-kotlin/](https://api-reference.sublab.dev/hashing-kotlin/)
 
 ## Contributing
 
