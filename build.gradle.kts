@@ -1,9 +1,10 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.7.21"
-    kotlin("plugin.serialization") version "1.7.21"
+    kotlin("jvm")
+    kotlin("plugin.serialization")
     `maven-publish`
+    id("org.jetbrains.dokka")
 }
 
 group = "dev.sublab"
@@ -14,15 +15,25 @@ repositories {
     mavenCentral()
 }
 
+val dokkaVersion: String by project
+val commonVersion: String by project
+val keccakVersion: String by project
+val cryptoHashVersion: String by project
+
 dependencies {
     testImplementation(kotlin("test"))
-    implementation("dev.sublab:common-kotlin:1.0.0")
-    implementation("dev.sublab:keccak-kotlin:1.0.0")
-    implementation("com.appmattus.crypto:cryptohash:0.10.1")
+    dokkaHtmlPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:$dokkaVersion")
+    implementation("dev.sublab:common-kotlin:$commonVersion")
+    implementation("dev.sublab:keccak-kotlin:$keccakVersion")
+    implementation("com.appmattus.crypto:cryptohash:$cryptoHashVersion")
 }
 
 tasks.test {
     useJUnitPlatform()
+}
+
+tasks.dokkaHtml.configure {
+    outputDirectory.set(projectDir.resolve("reference"))
 }
 
 tasks.withType<KotlinCompile> {
