@@ -14,9 +14,11 @@
 
 # Sublab's Common Kotlin library
 
-This is a Kotlin repository which shares common functionality across most of our repositories which solve separate problems in Substrate ecosystem.
+This is a Kotlin repository which shares hashing implementations of different algorithms used in Substrate ecosystem.
 
-So this is a good place to store new types that do not exist in Kotlin environment, but required for Substrate to work, such as Rust-specific types; some syntax sugar to enhance development speed and code readability; and different conversions between multiple types that happens frequently.
+When we add support for new Substrate networks which introduce new hashing algorithm, its implementation should be put here.
+
+Currently, all hashing algorithms are borrowed from other libraries, and all of them proxied with standard single interface for easier Substrate development.
 
 ## Sublab
 
