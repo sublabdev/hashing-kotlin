@@ -19,6 +19,6 @@
 package dev.sublab.ss58
 
 /**
- * A typealias for `ByteArray`
+ * A typealias for [AccountId] from [ByteArray]. Should be 32 bytes long
  */
 typealias AccountId = ByteArray

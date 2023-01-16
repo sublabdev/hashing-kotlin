@@ -39,39 +39,47 @@ private fun ByteArray.sha(outputSize: IntArray) =
     .digest()
 
 /**
- * Hashing via [SHA] using the provided output size
- * @param outputSize output size used when hashing via [SHA]
+ * Hashing via SHA using the provided output size
+ * @param outputSize output size used when hashing via SHA
  */
 private fun Hashing.sha(vararg outputSize: Int) = value.toByteArray().sha(outputSize)
 
 /**
- * Hashing via [SHA] with output size of 0
+ * Hashing via [Algorithm.SHA_0] with output size of 0
  */
 fun Hashing.sha0() = sha(0)
 
 /**
- * Hashing via [SHA] with output size of 1
+ * Hashing via [Algorithm.SHA_1] with output size of 1
  */
 fun Hashing.sha1() = sha(1)
 
 /**
- * Hashing via [SHA] with output size of 224
+ * Hashing via [Algorithm.SHA_224] with output size of 224
  */
 fun Hashing.sha224() = sha(224)
 
 /**
- * Hashing via [SHA] with output size of 256
+ * Hashing via [Algorithm.SHA_256] with output size of 256
  */
 fun Hashing.sha256() = sha(256)
 
 /**
- * Hashing via [SHA] with output size of 384
+ * Hashing via [Algorithm.SHA_384] with output size of 384
  */
 fun Hashing.sha384() = sha(384)
 
 /**
- * Hashing via [SHA] with output size of 512
+ * Hashing via [Algorithm.SHA_512] with output size of 512
  */
 fun Hashing.sha512() = sha(512)
+
+/**
+ * Hashing via [Algorithm.SHA_512_224] with output size of 224
+ */
 fun Hashing.sha512_224() = sha(512, 224)
+
+/**
+ * Hashing via [Algorithm.SHA_512_256] with output size of 256
+ */
 fun Hashing.sha512_256() = sha(512, 256)

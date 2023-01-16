@@ -19,18 +19,18 @@
 package dev.sublab.base58
 
 /**
- * An object that handles [ByteArray]'s encoding using [Base58]
- * @property byteArray the [Bytearray] to encode
+ * An object that handles [ByteArray]'s encoding using [Base58Coder]
+ * @property byteArray the [ByteArray] to encode
  */
 class ByteArrayBase58(private val byteArray: ByteArray) {
     /**
-     * Encodes the provided [ByteArray] using [Base58]
+     * Encodes the provided [ByteArray] using [Base58Coder]
      */
     fun encode() = Base58Coder.encode(byteArray)
 }
 
 /**
- * [ByteArray] encoder using [Base58]
+ * [ByteArray] encoder using [Base58Coder]
  */
 val ByteArray.base58
     get() = ByteArrayBase58(this)

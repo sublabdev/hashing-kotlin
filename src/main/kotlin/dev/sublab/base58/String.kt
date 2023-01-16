@@ -19,7 +19,7 @@
 package dev.sublab.base58
 
 /**
- * An object that handles [String]'s decoding using [Base58]
+ * An object that handles [String]'s decoding using [Base58Coder]
  * @property string the [String] to decode
  */
 class StringBase58(private val string: String) {
@@ -27,7 +27,7 @@ class StringBase58(private val string: String) {
 }
 
 /**
- * [String] decoder using [Base58]
+ * [String] decoder using [Base58Coder]
  */
 val String.base58
     get() = StringBase58(this)
